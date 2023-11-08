@@ -1,5 +1,11 @@
+import BaiTapThucHanhLayout from "./components/BaiTapThucHanhLayout";
+
 function App() {
-  return <div> hello</div>;
+  return (
+    <div>
+      <BaiTapThucHanhLayout />
+    </div>
+  );
 }
 
 export default App;
