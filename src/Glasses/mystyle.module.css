@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+  }
+  .glasses_layout {
+    background-image: url("../../public/img/background.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: none;
+    background-size: cover;
+  }
+  
+  .glasses_model {
+    text-align: center;
+    position: relative;
+  }
+  
+  .glasses_model img {
+    height: 400px;
+  }
+  
+  .glasses_model .glasses_of_model {
+    position: absolute;
+    top: 103px;
+    left: 0;
+    right: 0;
+  }
+  
+  .glasses_of_model img {
+    width: 193px;
+    height: 66px;
+  }
+  
+  .glasses_name {
+    position: absolute;
+  
+    left: 50%;
+    margin-top: 210px;
+    transform: translate(-50%, -50%);
+  }
+  
+  .glasses_container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
+    align-items: center;
+  }
+  .glasses_element img {
+    width: 90%;
+  }
+  
