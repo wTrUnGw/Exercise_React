@@ -1,5 +1,11 @@
+import ShoeShop from "./Components/ShoeShop";
+
 function App() {
-  return <div> hello</div>;
+  return (
+    <div>
+      <ShoeShop />
+    </div>
+  );
 }
 
 export default App;
