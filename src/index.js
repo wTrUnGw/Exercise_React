@@ -8,19 +8,8 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
-// setup redux
-import { Provider } from "react-redux";
-import { createStore } from "redux";
-import { rootReducer } from "./redux/reducers/rootReducer";
-
-const store = createStore(rootReducer);
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <Provider store={store}>
-    <App />
-  </Provider>
-);
+root.render(<App />);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
