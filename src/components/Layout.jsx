@@ -14,35 +14,60 @@ export default function Layout() {
 
   const usersFull = useRef();
   const getUsers = async () => {
-    const response = await fetchUsers();
-    usersFull.current = response;
-    await setUsers(response);
+    try {
+      const response = await fetchUsers();
+      usersFull.current = response;
+      await setUsers(response);
+      toast.success("Lấy danh sách thành công");
+    } catch (error) {
+      toast.error("Đã có lõi xảy ra");
+    }
   };
   const handleAddUser = async (user) => {
-    await addUser(user);
-    getUsers();
-    toast.success("Thêm Sinh Viên thành công");
+    try {
+      await addUser(user);
+      getUsers();
+      toast.success("Thêm Sinh Viên thành công");
+    } catch (error) {
+      toast.error("Đã có lõi xảy ra");
+    }
   };
   const handleDeleteUser = async (id) => {
-    await deleteUser(id);
-    getUsers();
-    toast.success("Xóa thành công");
+    try {
+      await deleteUser(id);
+      getUsers();
+      toast.success("Xóa thành công");
+    } catch (error) {
+      toast.error("Đã có lõi xảy ra");
+    }
   };
   const handleUpdateUser = async (id, user) => {
-    await updateUser(id, user);
-    getUsers();
-    toast.success("Cập nhật thành công");
+    try {
+      await updateUser(id, user);
+      getUsers();
+      toast.success("Cập nhật thành công");
+    } catch (error) {
+      toast.error("Đã có lõi xảy ra");
+    }
   };
 
   const getInfoSVById = async (id) => {
-    const selected = await fetchUserById(id);
-    setSelectedUser(selected);
-    setIsUpdating(true);
+    try {
+      const selected = await fetchUserById(id);
+      setSelectedUser(selected);
+      setIsUpdating(true);
+    } catch (error) {
+      toast.error("Đã có lõi xảy ra");
+    }
   };
 
   const cancelUpdate = () => {
-    setSelectedUser(null);
-    setIsUpdating(false);
+    try {
+      setSelectedUser(null);
+      setIsUpdating(false);
+    } catch (error) {
+      toast.error("Đã có lõi xảy ra");
+    }
   };
 
   const handleChangeSearchTerm = (e) => {
@@ -83,7 +108,7 @@ export default function Layout() {
         onChangeSearchTerm={handleChangeSearchTerm}
         cancelUpdate={cancelUpdate}
       />
-      <Toaster position="top-right" />
+      <Toaster position="top-center" />
     </div>
   );
 }
